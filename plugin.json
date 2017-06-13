@@ -1,0 +1,36 @@
+{
+  "name": "AppDynamics",
+  "id": "appdynamics-grafana-datasource",
+  "type": "datasource",
+
+  "metrics": true,
+  "annotations": false,
+
+  "info": {
+    "description": "Appdynamics datasource",
+    "author": {
+      "name": "David Lopes",
+      "url": "http://github.com/dlopes7"
+    },
+    "logos": {
+      "small": "img/appdynamics.svg",
+      "large": "img/appdynamics.svg"
+    },
+    "links": [{
+        "name": "GitHub",
+        "url": "https://github.com/dlopes7/appdynamics-grafana-datasource"
+      },
+      {
+        "name": "MIT License",
+        "url": "https://github.com/grafana/simple-json-datasource/blob/master/LICENSE"
+      }
+    ],
+    "version": "0.0.1",
+    "updated": "2017-06-12"
+  },
+
+  "dependencies": {
+    "grafanaVersion": "3.x.x",
+    "plugins": []
+  }
+}
