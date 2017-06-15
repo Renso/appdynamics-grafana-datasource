@@ -1,4 +1,5 @@
 import { AppDynamicsDatasource } from './datasource';
+import {AppDynamicsQueryCtrl} from './query_ctrl';
 
 class AppDynamicsConfigCtrl {
     static templateUrl = 'partials/config.html';
@@ -15,6 +16,7 @@ class AppDynamicsAnnotationsQueryCtrl {
 export {
     AppDynamicsDatasource as Datasource,
     AppDynamicsConfigCtrl as ConfigCtrl,
-    AppDynamicsQueryOptionsCtrl as QueryCtrl,
+    AppDynamicsQueryCtrl as QueryCtrl,
+    AppDynamicsQueryOptionsCtrl as QueryOptionsCtrl,
     AppDynamicsAnnotationsQueryCtrl as AnnotationsQueryCtrl
 };

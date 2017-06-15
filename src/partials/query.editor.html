@@ -1,0 +1,73 @@
+<query-editor-row query-ctrl="ctrl" can-collapse="false">
+
+  <div class="gf-form-inline">
+    <div class="gf-form max-width-20">
+      <label class="gf-form-label width-7">Query Mode</label>
+      <div class="gf-form-select-wrapper max-width-20">
+        <select class="gf-form-input"
+              ng-change="ctrl.switchEditorMode(ctrl.target.mode)"
+              ng-model="ctrl.target.mode"
+              ng-options="v.mode as v.text for (k, v) in ctrl.editorModes">
+        </select>
+      </div>
+    </div>
+    <div class="gf-form gf-form--grow">
+      <div class="gf-form-label gf-form-label--grow"></div>
+    </div>
+  </div>
+
+
+  <div class="gf-form-inline" ng-hide="ctrl.target.mode == 1">
+    <!-- Select Group -->
+    <div class="gf-form max-width-20">
+      <label class="gf-form-label query-keyword width-7">Group</label>
+      <input type="text"
+        ng-model="ctrl.target.group.filter"
+        bs-typeahead="ctrl.getGroupNames"
+        ng-blur="ctrl.onTargetBlur()"
+        data-min-length=0
+        data-items=100
+        class="gf-form-input"
+        ng-class="{
+          'zbx-variable': ctrl.isVariable(ctrl.target.group.filter),
+          'zbx-regex': ctrl.isRegex(ctrl.target.group.filter)
+          }"></input>
+    </div>
+    <!-- Select Host -->
+
+    <div class="gf-form gf-form--grow">
+      <div class="gf-form-label gf-form-label--grow"></div>
+    </div>
+  </div>
+
+  <div class="gf-form-inline" ng-hide="ctrl.target.mode == 1">
+
+    <!-- Select Item -->
+    <div class="gf-form">
+      <label class="gf-form-label query-keyword width-7">Item</label>
+      <input type="text"
+        ng-model="ctrl.target.item.filter"
+        bs-typeahead="ctrl.getItemNames"
+        ng-blur="ctrl.onTargetBlur()"
+        data-min-length=0
+        data-items=100
+        class="gf-form-input"
+        ng-class="{
+          'zbx-variable': ctrl.isVariable(ctrl.target.item.filter),
+          'zbx-regex': ctrl.isRegex(ctrl.target.item.filter)
+        }">
+    </div>
+    <div class="gf-form gf-form--grow">
+      <label class="gf-form-label gf-form-label--grow">
+        <a ng-click="ctrl.toggleQueryOptions()">
+          <i class="fa fa-caret-down" ng-show="ctrl.showQueryOptions"></i>
+          <i class="fa fa-caret-right" ng-hide="ctrl.showQueryOptions"></i>
+          {{ctrl.queryOptionsText}}
+        </a>
+      </label>
+    </div>
+  </div>
+
+  </div>
+
+</query-editor-row>
